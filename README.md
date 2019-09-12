@@ -1,9 +1,9 @@
 # DEPRECATED
 
 **This repo contains the open sourced version of https://codecards.me/, a
-product I made (https://oskarth.com/launching-code-cards/) that got shut down due to traction**
+product I made (https://oskarth.com/launching-code-cards/) that got shut down due to lack of traction.**
 
-**Feel free to fork this code and do what you want with it, please note that I don't have the bandwidth to provide tech support on things like tech support (buidling the project, etc). The project is thus deprecated in a sense, but perhaps it is useful as inspiration to someone.**
+**Feel free to fork this code and do what you want with it. Please note that I don't have the bandwidth to provide tech support on things like buidling the project, running it, fixing bugs, etc. The project is thus deprecated in a sense, but perhaps it is useful as inspiration to someone. Feel free to reach out to me on Twitter @oskarth.**
 
 
 # Old notes
