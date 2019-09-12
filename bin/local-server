@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd server
+envdir ../secrets/development boot repl -s wait

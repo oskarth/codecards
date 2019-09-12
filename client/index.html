@@ -1,0 +1,371 @@
+<html>
+  <head>
+    <title>Code Cards - Spaced repetition for programming, Anki for code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Code Cards helps you remember programming knowledge you don't use on a day to day basis using spaced repetition. Spaced repetition is a way of taking advantage of how human memory works. Instead of reviewing an idiom every day or every week, you might repeat it after a day, then a week, then a month, etc. This means you can keep hundreds of idioms fresh in your mind in just 20 minutes a day.">
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js?v=1"></script>
+    <script src="lib/codemirror.js"></script>
+    <script async src="lib/shell.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+    <!-- <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css"> -->
+
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments, 0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                              for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+     mixpanel.init("c6a297424837156020c1286220d18caa");</script>
+    <!-- end Mixpanel -->
+
+  </head>
+
+  <body>
+    <div id="signupBanner" class="page-header yellow-bg">
+      Sign up to add more cards, save your progress and get notifications when you have cards to review <button id="signupButton">$10 one-time fee</button>
+    </div>
+    <div id="notify" class="page-header">Notifications</div>
+
+    <!-- page -->
+    <div class="page">
+
+      <!-- page-content -->
+      <div class="page-content">
+
+        <div id="secret">
+          <p id="secretPending">wtf</p>
+        </div>
+
+        <h1> <a id="goHome" href="#">Code Cards</a></h1>
+
+      <!-- menu -->
+        <div id="menu">
+          <button id="goAdd" title="Add a card" href="#">Add</button>
+          <button id="goReview" title="Review cards" href="#" disabled>Review</button>
+          <button id="goMyCards" href="#" disabled>My Cards</button>
+          <button id="goCollections" href="#" disabled>Collections</button>
+          <button id="goLogin" href="#">Login</button>
+          <button id="goSettings" href="#" disabled>Settings</button>
+        </div>
+      <!-- menu end -->
+
+        <!-- home -->
+        <div id="home">
+
+          <!-- homeIntro -->
+          <div id="homeIntro">
+            <p> Code Cards helps you remember programming knowledge you
+              don't use on a day to day basis using spaced repetition. </p>
+            <p> Spaced repetition is a way of taking advantage of how
+              human memory works. Instead of reviewing an idiom every day
+              or every week, you might repeat it after a day, then a week,
+              then a month, etc. This means you can keep hundreds of
+              idioms fresh in your mind in just 20 minutes a day. </p>
+          </div>
+          <!-- homeIntro end -->
+
+          <!-- gettingStartedContainer -->
+          <div id="gettingStartedContainer">
+            <h1>Getting started</h1>
+
+            <!-- gettingStartedAdd -->
+            <div id="gettingStartedAdd">
+              <h2>Add cards</h2>
+              <img src="codecards-add.png"
+                 alt="Code Cards Add A Card"></img>
+              <p>When you learn something new during your day, create a minimal
+            example. A good question has all the boilerplate but leaves out the
+            interesting part.</p> </div>
+            <!-- gettingStartedAdd end -->
+
+            <!-- gettingStartedReview -->
+            <div id="gettingStartedReview">
+               <h2>Review cards</h2>
+               <img src="codecards-review-in-progress.png"
+                 alt="Code Cards Review In Progress"></img>
+               <img src="codecards-review-done.png"
+                 alt="Code Cards Review Done"></img>
+               <p>When you feel done, look at the answer and decide how well you did.</p>
+            </div>
+            <!-- gettingStartedReview end -->
+
+          </div>
+          <!-- gettingStartedContainer end -->
+
+          <!-- gettingStartedCTA -->
+          <div class="centered" id="gettingStaredCTA">
+            <button id="goAdd2">Add your first card</button>
+            <br>
+            <br>
+            <b>or</b>
+          </div>
+          <!-- gettingStartedCTA end -->
+
+          <script async id="_ck_199188" src="https://forms.convertkit.com/199188?v=6"></script>
+
+        </div>
+        <!-- home end -->
+
+        <div id="reviewCards">
+          <h2>Review cards</h2>
+          <p>The default collection contains all your cards.</p>
+
+          <div id="answerButtons2">
+            <button id="answerButtonEdit">Edit</button>
+            <button id="answerButtonRemove">Remove</button>
+          </div>
+        </div>
+
+          <!-- goReviewStart -->
+        <div id="goReviewStart">
+          <!-- myCollections -->
+          <div id="myCollectionsReview">
+            <div class="collection">
+            </div>
+            <span class="clearfix"></span>
+            <div id="myCollectionsListReview">
+              <div class="collection"> </div>
+              <span class="clearfix"></span>
+            </div>
+
+          </div>
+          <!-- myCollectionsReview end -->
+        </div>
+        <!-- goReviewStart end -->
+
+        <!-- allCollectionsContainer -->
+        <div id="allCollectionsContainer">
+
+          <!-- myCollections -->
+          <div id="myCollections">
+            <h2>My collections</h2>
+            <!-- New collection here -->
+            <div class="collection">
+              <input id="newCollectionName"></input>
+              <button id="createCollection">Create</button>
+            </div>
+            <span class="clearfix"></span>
+
+            <div id="myCollectionsList">
+              <h1>My collections</h1>
+              <!-- Populate these dynamically -->
+              <div class="collection">
+              </div>
+            <span class="clearfix"></span>
+            </div>
+
+          </div>
+          <!-- myCollections end -->
+
+
+          <!-- publicCards -->
+          <div id="publicCardsContainer">
+              <h1>Public collections</h1>
+
+            <div id="publicCollectionsList">
+              <!-- Populate these dynamically -->
+              <div class="collection">
+              </div>
+              <span class="clearfix"></span>
+            </div>
+
+            <!-- TODO: This should be loaded -->
+            <!-- <h2>Public collections</h2>
+                 <div class="collection">
+                 <p class="collection">
+                 <b>Clojure - destructuring</b> (10 cards)</p>
+                 <button id="addClojureCards">Add</button>
+                 </div>
+               -->
+
+            <h2>Inspiration</h2>
+          <div id="publicCards">
+          </div>
+
+        </div>
+        <!-- publicCards end -->
+        </div>
+        <!-- allCollectionsContainer end -->
+
+        <!-- myCards -->
+        <div id="myCardsContainer">
+            <h2>My cards</h2>
+          <div id="myCards">
+          </div>
+        </div>
+        <!-- myCards end -->
+
+        <!-- reviewsDone -->
+        <div id="reviewsDone">
+          <p>All reviews appear to be done. Re-trying to make sure...</p>
+        </div>
+        <!-- reviewsDone end -->
+
+        <!-- reviewsReallyDone -->
+        <div id="reviewsReallyDone">
+          <p>All reviews are done, please check back later.</p>
+        </div>
+        <!-- reviewsReallyDone end -->
+
+
+        <!-- settings -->
+        <div id="settings">
+          <h2>Settings</h2>
+            <input id="sendEmailsInput" checked="true" type="checkbox">Let me know when my cards are due</input>
+            <div>
+              <button id="updateSettingsButton">Update settings</button>
+            </div>
+        </div>
+        <!-- settings end -->
+
+
+          <!-- WIP: What is login etc doing inside qaContainer? -->
+        <!-- qaContainer -->
+        <div id="qaContainer">
+
+          <!-- login -->
+          <div id="login">
+            <p>If you have an account already, enter your email below to login.</p>
+            <label>
+              <input id="emailInput"
+                autofocus="true"
+                placeholder="foo@example.com"></input>
+            </label>
+            <!-- DO THINGS THAT DONT SCALE -->
+            <!-- <label>
+                 <input id="sendEmailsInput" checked="true" type="checkbox">Let me know when my cards are due</input>
+                 </label> -->
+            <label>
+              <button id="loginButton">Login</button>
+            </label>
+
+            <!-- signupCTA -->
+            <div id="signupCTA">
+              <p> Sign up to add more cards, save your progress and get
+                notifications when you have cards to review.</p>
+              <button id="signupButton2">Sign up for a $10 one-time fee</button>
+            </div>
+            <!-- signupCTA end -->
+
+          </div>
+          <!-- login end -->
+
+          <!-- notReadyPayment -->
+          <div id="notReadyPayment">
+            <p>Sorry, you caught us before we were ready! <b>Your credit card has not charged.</b> If you subscribe, we'll let you know as soon as the doors are fully opened. In the meantime, you can keep still add and review cards.</p>
+
+            <!-- class mc_wrapper -->
+            <div class="mc_wrapper">
+              <div id="mc_embed_signup">
+                <form action="//replaceme.us10.list-manage.com/subscribe/post?u=eb9509b0e9820f2fc234227d6&amp;id=c3ac3aaf0c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll">
+                    <label for="mce-EMAIL">Subscribe for updates</label>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_eb9509b0e9820f2fc234227d6_c3ac3aaf0c" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- class mc_wrapper end -->
+
+          </div>
+          <!-- notReadyPayment end -->
+
+          <div id="addCards">
+            <h2>Add cards</h2>
+            <p> Your cards will be persisted in local storage for this browser. </p>
+          </div>
+
+          <div id="editCards">
+            <h2>Edit cards</h2>
+          </div>
+
+
+
+          <div id="reviewOverview">
+            <!-- Show collections, maybe just move part of collection? -->
+          </div>
+
+          <!-- Collection drop down, defauls to main -->
+          <div id="selectCollection">
+            <p>Collection</p>
+            <select id="selectOptionCollection">
+            </select>
+          </div>
+
+          <!-- class boxes -->
+          <!-- CodeMirror mounts here -->
+          <div class="boxes">
+            <textarea id="questionBox"
+              placeholder="Write your question here"></textarea>
+            <textarea id="answerBox"
+              placeholder="And the answer here"></textarea>
+          </div>
+          <!-- class boxes end -->
+
+          <!-- class boxButtons -->
+          <div class="boxButtons">
+
+            <!-- addCardButtons -->
+            <div id="addCardButtons">
+              <button id="addCardAndReview"> Save and review</button>
+              <button id="addCardAndAnother"> Save and add more</button>
+              <!-- <button id="addCard">Save card</button> -->
+            </div>
+            <!-- addCardButtons -->
+
+            <!-- editCardButtons -->
+            <div id="editCardButtons">
+              <button id="editCard">Update card</button>
+            </div>
+            <!-- editCardButtons -->
+
+
+
+            <button id="showButton"> Show answer </button>
+
+            <!-- answerButtons -->
+            <div id="answerButtons">
+             <button id="answerButtonDontKnow">Don't know</button>
+              <button id="answerButtonKnow">Know</button>
+            </div>
+            <!-- answerButtons -->
+
+          </div>
+          <!-- class boxButtons -->
+
+        </div>
+        <!-- qaContainer end -->
+
+      </div>
+      <!-- page-content end -->
+
+    </div>
+    <!-- page end-->
+
+    <footer>
+      Made by <a href="https://twitter.com/oskarth">@oskarth</a>.
+      Read more about my experience with <a href="https://www.oskarth.com/srspractice/"> spaced repetition</a>.
+    </footer>
+
+    <!-- olark -->
+    <script data-cfasync="false" async type='text/javascript'>/*<![CDATA[*/window.olark||(function(c){var f=window,d=document,l=f.location.protocol=="https:"?"https:":"http:",z=c.name,r="load";var nt=function(){ f[z]=function(){ (a.s=a.s||[]).push(arguments)};var a=f[z]._={ },q=c.methods.length;while(q--){(function(n){f[z][n]=function(){ f[z]("call",n,arguments)}})(c.methods[q])}a.l=c.loader;a.i=nt;a.p={ 0:+new Date};a.P=function(u){ a.p[u]=new Date-a.p[0]};function s(){ a.P(r);f[z](r)}f.addEventListener?f.addEventListener(r,s,false):f.attachEvent("on"+r,s);var ld=function(){function p(hd){ hd="head";return["<",hd,"></",hd,"><",i,' onl' + 'oad="var d=',g,";d.getElementsByTagName('head')[0].",j,"(d.",h,"('script')).",k,"='",l,"//",a.l,"'",'"',"></",i,">"].join("")}var i="body",m=d[i];if(!m){ return setTimeout(ld,100)}a.P(1);var j="appendChild",h="createElement",k="src",n=d[h]("div"),v=n[j](d[h](z)),b=d[h]("iframe"),g="document",e="domain",o;n.style.display="none";m.insertBefore(n,m.firstChild).id=z;b.frameBorder="0";b.id=z+"-loader";if(/MSIE[ ]+6/.test(navigator.userAgent)){ b.src="javascript:false"}b.allowTransparency="true";v[j](b);try{ b.contentWindow[g].open()}catch(w){ c[e]=d[e];o="javascript:var d="+g+".open();d.domain='"+d.domain+"';";b[k]=o+"void(0);"}try{ var t=b.contentWindow[g];t.write(p());t.close()}catch(x){ b[k]=o+'d.write("'+p().replace(/"/g,String.fromCharCode(92)+'"')+'");d.close();'}a.P(2)};ld()};nt()})({ loader: "static.olark.com/jsclient/loader0.js",name:"olark",methods:["configure","extend","declare","identify"]});
+     /* custom configuration goes here (www.olark.com/documentation) */
+     olark.identify('1916-435-10-5223');/*]]>*/</script><noscript><a href="https://www.olark.com/site/1916-435-10-5223/contact" title="Contact us" target="_blank">Questions? Feedback?</a> powered by <a href="http://www.olark.com?welcome" title="Olark live chat software">Olark live chat software</a></noscript>
+    <!-- olark end -->
+
+  </body>
+
+  <!-- google analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-62506585-2', 'auto');
+   ga('send', 'pageview');
+  </script>
+  <!-- google analytics -->
+
+</html>

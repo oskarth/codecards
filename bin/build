@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+echo "[Building...]"
+(cd server && boot build)
+echo "[Artifact location...]"
+ls server/target/*.jar
+echo "[Done.]"

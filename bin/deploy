@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+#
+
+set -eu
+
+# This dir assumed
+cd "/Users/replaceme/3.egenblick/31.code/31.01.codecards/"
+
+# Use install instead...
+# Or write-protect?
+
+if [ "$1" == "production" ]; then
+    echo "[Deploying to production...]"
+    APP_ENV="production"
+    SED_STR='s/^.*REPLACE.*$/  this.apiroot = \"https:\/\/codecards.me\/api\"; \/\/REPLACE/'
+elif [ "$1" == "staging" ]; then
+    echo "[Deploying to staging...]"
+    APP_ENV="staging"
+    SED_STR='s/^.*REPLACE.*$/  this.apiroot = \"https:\/\/codecards.replaceme.com\/api\"; \/\/REPLACE/'
+else
+    echo "First argument must be staging or production"
+    exit 1
+fi
+
+SED_REV_STR='s/^.*REPLACE.*$/  this.apiroot = \"https:\/\/codecards.replaceme.com\/api\"; \/\/REPLACE/'
+
+NEW_TAG="${APP_ENV}-$(git rev-parse --short HEAD)"
+SERVER="blue-${APP_ENV}"
+SECRETS="secrets/${APP_ENV}"
+
+cp -r "$SECRETS" env
+sed -i.bak "${SED_STR}" client/app.js
+echo "[Replacing apiroot url...]"
+#git --no-pager diff client/app.js
+echo '[Syncing...]'
+rsync -r --exclude 'data/*' --exclude 'server/events.log' --exclude 'events.log' \
+  . freebsd@"${SERVER}:/usr/home/freebsd/fingertips"
+echo "[Removing env and apiroot replacement...]"
+rm -r env
+sed -i.bak "${SED_REV_STR}" client/app.js
+rm client/app.js.bak
+#git checkout client/app.js
+echo "[Tagging release...${NEW_TAG}]"
+git tag "${NEW_TAG}"
+echo "[Done]"

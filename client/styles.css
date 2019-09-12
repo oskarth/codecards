@@ -1,0 +1,613 @@
+/* * { border: 1px solid red; } */
+
+/* html, */
+/* body, */
+/* .page { */
+/*     height: 100%; */
+/* } */
+
+
+body {
+    margin: 0 auto;
+    font-family: "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    color: #555;
+}
+
+h1,
+h2,
+strong {
+    color: #333;
+}
+
+/* width: 100%; */
+/* max-width: 1000px; */
+/* padding: 1em; */
+
+* { box-sizing:border-box; }
+
+.page {
+    display: flex;
+    flex-direction: column;
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+.page-header {
+    flex: 0 0 auto;
+    color: black;
+    background-color: #19a974;
+}
+
+.page-content {
+    flex: 1 1 auto;
+    padding: 1em;
+    position: relative;
+    overflow-y: auto;
+}
+
+button {
+  cursor: pointer; cursor: hand;
+}
+
+h1 a {
+    color: #333;
+    text-decoration: none;
+}
+
+body {
+    color: #566b78;
+}
+
+textarea {
+    background: #f5f7f9;
+    border-bottom: 1px solid #d8dee9;
+    color: #555;
+    width: 80em;
+    padding: 0.5em;
+    height: 20em;
+    font-size: 1em;
+}
+
+a {
+    color: #e81c4f;
+}
+
+button {
+    font-size: 1.4em;
+    border-style: solid;
+    box-shadow: inset 0 1px 0 #3af;
+    border-color: #06a;
+    background-color: #07c;
+    color: #eee;
+    padding: 0.35em;
+}
+
+#qaContainer {
+    display: flex;
+    flex-direction: column;
+    max-width:80em;
+}
+
+.align-right {
+    float: right;
+    margin: 0 auto;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0em;
+}
+
+.boxButtons {
+    display: flex;
+    flex-direction: column;
+}
+
+.questionContainer {
+    display: flex;
+    flex-direction: column;
+    width:50em;
+}
+
+.answerContainer {
+    display: flex;
+    flex-direction: column;
+    width:50em;
+}
+
+#answerBox {
+    border: 3px solid blue;
+    display: none;
+}
+
+#answerButtons {display: none;}
+#answerButtons2 {
+    display: none;
+    margin-top: 1em;
+    margin-bottom: -1em;
+}
+
+#showButton {
+    /*    display: block; */
+    display: none;
+}
+
+#questionBox {
+    display: none;
+}
+
+#answerButtons button {
+    display: block;
+    width: 50%;
+}
+
+#answerButtons2 button {
+    display: block;
+    width: 12.5%;
+    margin-right: 0.5em;
+}
+
+
+
+#addCardButtons {
+    display: none;
+}
+
+#addCardButtons button {
+    width: 100%;
+}
+
+#editCardButtons button {
+    width: 100%;
+}
+
+
+#notify {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+#secret {
+    display: none;
+}
+
+#secretPending { 
+}
+
+#outstandingEvents {
+    font-weight: bold;
+    color: black;
+}
+
+/* TODO: Avoid double border  */
+.CodeMirror {
+    font-family: monospace;
+    border: 1px solid #333;
+    background: #f5f7f9;
+    height: 300px;
+    width: 100em;
+}
+
+#login {
+    display: none;
+}
+
+input {
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+label {
+    display: block;
+}
+
+/* XXX: Hack */
+#menu {
+    margin-top: -1em;
+}
+
+#menu button {
+    margin-right: 0.3em;
+}
+
+#home {
+    display: block;
+}
+
+/* Mailchimp CSS */
+#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+
+#home video {
+    margin: 0em;
+}
+
+#home h2 {
+    margin: 0em;
+}
+
+#home video {
+    /* border: 1px solid red; */
+}
+
+#homeIntro {
+    color: #111;
+    font-size: 1.5em;
+    margin-bottom: 3em;
+    max-width: 50em;
+}
+
+#gettingStartedContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#gettingStartedAdd {
+    display: flex;
+    flex-direction: column;
+    display: inline-block;
+    margin-bottom: 3em;
+}
+
+#gettingStartedAdd h2 {
+    margin: 0em;
+}
+
+#gettingStartedAdd p {
+    width: 45em;
+    display: inline-block;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+#gettingStartedAdd h2 {
+    margin: 0em;
+}
+
+#gettingStartedReview p {
+    width: 45em;
+    display: inline-block;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+
+#gettingStartedReview {
+    display: flex;
+    flex-direction: column;
+    display: inline-block;
+    margin-bottom: 3em;
+}
+
+.centered {
+    text-align: center;
+}
+
+#mc_embed_signup {
+    margin: 0em;
+    margin-top: 1em;
+    font-size: 1.1em;
+    color: black;
+    display: inline-block;
+}
+
+#mc_embed_signup input {
+    margin: 0.5em;
+    text-align: center;
+}
+
+#mc_embed_signup label {
+    color: black;
+    font-size: 1.5em;
+}
+
+#cta {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.mc_wrapper {
+    text-align: center;
+}
+
+video { cursor: pointer; }
+
+#payment {
+    display: none;
+}
+
+#notReadyPayment {
+    display: none;
+}
+
+#login {
+    max-width: 45em;
+}
+
+#login p {
+    color: #111;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+#login input {
+    color: #111;
+    font-size: 1.5em;
+}
+
+#payment .container {
+    width: 500px;
+}
+
+#payment p {
+    color: #111;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+#payment input {
+    color: #111;
+    font-size: 1.5em;
+}
+
+#goSignup { float: right; }
+#goLogin { float: right; }
+#goSettings { float: right; }
+
+#goReview:disabled {
+    box-shadow: inset 0 1px 0 #8fb3cc;
+    border-color: #7da2b3;
+    background-color: #8fb3cc;
+    color: #eee;
+}
+
+#goCollections:disabled {
+    box-shadow: inset 0 1px 0 #8fb3cc;
+    border-color: #7da2b3;
+    background-color: #8fb3cc;
+    color: #eee;
+}
+
+#reviewsDone { display: none; }
+#reviewsReallyDone { display: none; }
+
+#answerButtonKnow {
+    box-shadow: inset 0 1px 0 #52ff33;
+    border-color: #0b0;
+    background-color: #0c2;
+}
+
+#answerButtonDontKnow {
+    box-shadow: inset 0 1px 0 #ff334f;
+    border-color: #b00;
+    background-color: #c00;
+}
+
+#addCards { display: none; }
+#addCards p { margin-bottom: 0em; }
+
+#reviewCards { display: none; }
+#reviewCards p { margin-bottom: 0em; }
+
+#signupBanner {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    padding: 0.5em;
+    display: none;
+}
+
+.yellow-bg { background-color: yellow; }
+
+#signupButton {
+    box-shadow: inset 0 1px 0 #ff334f;
+    border-color: #b00;
+    background-color: #c00;
+}
+
+/* XXX: Lol bad style */
+#signupButton2 {
+    box-shadow: inset 0 1px 0 #ff334f;
+    border-color: #b00;
+    background-color: #c00;
+}
+
+
+
+.inline {
+    display: inline-block;
+}
+
+#allCollectionsContainer { display: none; }
+#goReviewStart { display: none; }
+#myCollectionsListReview { display: none; }
+
+/* XXX: Eh, min-width not working, bad margins */
+#myCollectionsListReview p {
+    min-width: 40em;
+    margin-right: 1em;
+}
+
+.publicCard {
+    margin-bottom: 1em;
+    max-width: 55em;
+    width: 55em;
+}
+
+.publicQuestion {
+    background-color: #ccc;
+    font-size: 1.3em;
+    margin: 0em;
+    padding: 0.5em;
+}
+
+.publicAnswer {
+    background-color: #aaa;
+    font-size: 1.3em;
+    margin: 0em;
+    padding: 0.5em;
+}
+
+.addPublicCard:disabled {
+    box-shadow: inset 0 1px 0 #8fb3cc;
+    border-color: #7da2b3;
+    background-color: #8fb3cc;
+    color: #eee;
+}
+
+.publicCardContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#publicCardsContainer { margin-top: 3em; }
+
+#goCollections { display: inline-block; }
+
+
+#myCardsContainer { display: none; }
+
+.myCard {
+    margin-bottom: 1em;
+    max-width: 55em;
+    width: 55em;
+}
+
+.myQuestion {
+    background-color: #ccc;
+    font-size: 1.3em;
+    margin: 0em;
+    padding: 0.5em;
+}
+
+.myAnswer {
+    background-color: #aaa;
+    font-size: 1.3em;
+    margin: 0em;
+    padding: 0.5em;
+}
+
+.addMyCard:disabled {
+    box-shadow: inset 0 1px 0 #8fb3cc;
+    border-color: #7da2b3;
+    background-color: #8fb3cc;
+    color: #eee;
+}
+
+.myCardContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#goMyCards:disabled {
+    box-shadow: inset 0 1px 0 #8fb3cc;
+    border-color: #7da2b3;
+    background-color: #8fb3cc;
+    color: #eee;
+}
+
+#goSettings:disabled {
+    box-shadow: inset 0 1px 0 #8fb3cc;
+    border-color: #7da2b3;
+    background-color: #8fb3cc;
+    color: #eee;
+}
+
+.collectionButton:disabled {
+    box-shadow: inset 0 1px 0 #8fb3cc;
+    border-color: #7da2b3;
+    background-color: #8fb3cc;
+    color: #eee;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 5em;
+    margin-bottom: 0.9em;
+}
+
+.collection {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 30em;
+}
+
+.collection button {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.collection p {
+    font-size: 1.3em;
+    display: inline;
+}
+
+.collection input {
+    font-size: 1.3em;
+    display: inline;
+}
+
+#sendSettings {
+    margin-top: 0.5em;
+}
+
+#selectCollection {
+    font-size: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#selectCollection p {
+    display: inline;
+}
+#selectCollection select { width: 40em; }
+
+@media only screen and (max-device-width: 480px) {
+
+    #menu button {
+        display: block;
+        margin-top: 0.5em;
+    }
+
+    #goLogin {
+        float: none;
+    }
+
+    img {
+        max-width: 20em;
+    }
+
+    #gettingStartedAdd p {
+        width: 20em;
+    }
+
+    #gettingStartedReview p {
+        width: 20em;
+    }
+
+    .boxes {
+        flex-direction: column;
+    }
+
+    .CodeMirror {
+        width: 25em;
+    }
+
+    .myCard {
+        max-width: 25em;
+        width: 25em;
+    }
+
+    .publicCard {
+        max-width: 21.5em;
+    }
+}

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "Starting server"
+cd ~/fingertips/server
+
+envdir ~/fingertips/env boot repl -s wait >server.log 2>&1 &
+cd ~
+tail -f ~/fingertips/server/server.log

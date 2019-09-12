@@ -1,0 +1,12 @@
+.DS_Store
+target
+.nrepl-history
+.nrepl-port
+events.log
+server.log
+fingertips.snapshot
+data
+secrets.env
+secrets
+env
+git-archive

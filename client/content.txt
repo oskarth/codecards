@@ -1,0 +1,5 @@
+- srs hash thing
+- flexbox how to put two things on top of...
+- hide a box
+- cljs json text, call (.stringify js/JSON (clj->js {:foo "qqq"})) on this
+

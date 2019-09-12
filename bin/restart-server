@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# XXX: This is really slow
+
+echo "Restarting server"
+kill `lsof -w -i :8084 | grep java | awk '{print $2}'`
+~/fingertips/bin/repl-server

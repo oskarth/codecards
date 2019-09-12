@@ -1,0 +1,45 @@
+Shell scripting. In bash, write:
+foo+1@bar.com
+foo+2@bar.com
+
+etc up to 10 to a file `quux`.
+> ...
+--------------------------------------------------------------------------------
+for i in `seq 1 10`; do echo "foo+@i" >> quux; done
+================================================================================
+Replace foo with quux using awk and print to STDOUT:
+echo foobarfoo | awk ...
+--------------------------------------------------------------------------------
+echo foobarfoo | awk '{gsub("foo", "quux"); print $0}'
+================================================================================
+# Make $PATH readable (newlines), grep for 'go' and
+# save file to 'path' file in one command.
+echo $PATH | ... | grep go
+--------------------------------------------------------------------------------
+# Make $PATH readable (newlines), grep for 'go' and
+# save file to 'path' file in one command.
+echo $PATH | tr ':' '\n' | tee path | grep go
+================================================================================
+# Destructure the nested map
+(def m {:headers {"authorization" "0xdeadbeef"} :body "foo"})
+(let [... m]
+  Authorization) ; => "0xdeadbeef"
+--------------------------------------------------------------------------------
+# Destructure the nested map
+(def m {:headers {"authorization" "0xdeadbeef"} :body "foo"})
+(let [{{:strs [authorization]} :headers} m]
+  authorization) ; => "0xdeadbeef"
+================================================================================
+# Replace "hello foo" line with "bye bar" using sed.
+echo "hello foo\nhello there" | sed ...
+--------------------------------------------------------------------------------
+# Replace "hello foo" line with "bye bar" using sed.
+echo "hello foo\nhello there" | sed 's/^.*foo.*$/bye bar/'
+================================================================================
+
+
+....
+NEW_TAG="${APP_ENV}-$(git rev-parse --short HEAD)"
+
+...
+

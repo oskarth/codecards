@@ -1,0 +1,12 @@
+;; 1
+{:question
+ "How to set two columns in a div on top of each other using flexbox?
+
+.container {
+  [...]
+}"
+ :answer
+ ".container {
+  display: flex;
+  flex-direction: column;
+}"}

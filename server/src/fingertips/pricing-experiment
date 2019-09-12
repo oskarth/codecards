@@ -1,0 +1,47 @@
+When did I go live with payments? Jan 31 23:50, so really Feb 1 I guess
+
+Simplest metric is just Home -> Checkout right? Then compare to number of actions.
+
+Visited -> Used (actions) -> Paid
+
+
+HOME -> GO LOGIN -> GO PAY -> CHECKOUT
+1645
+
+Funnel 1: Home -> Go login -> Go pay -> Checkout
+Funnel 2: Home -> Signup banner -> Go pay -> Checkout
+Funnel 3: Home -> Action -> Action -> Action
+
+VISITS / PAY
+
+
+Feb 1 - Feb 7:
+Visits (2388)
+
+I have 6 payments for $5. How many visits?
+
+GA and Mixpanel ridiculously inaccurate. Why
+
+Simplest possible metric. I know I charged 6 5, for how many sessions?
+
+FEB 1 - FEB 7 2100 unique sessions, 6 payments = 0.3% conversion
+
+cat server/events.log | grep -E "new-card|review-card" | grep -E "2017-02-01|2017-02-02|2017-02-03|2017-02-04|2017-02-05|2017-02-06|2017-02-06|2017-02-06" | wc -l
+;; => 952 card actions (with unique tokens etc? here's where PSQL would be good)
+
+I meant
+
+This is GOOD ENOUGH THO. PAYMENT/SESSIONS or total revenue per session =
+
+30/2100 = 0.014 (but doesn't count old active users, etc)
+
+So how know if good? Well, if I for next 2000 unique sessions get less than 2 payments. Right?
+
+Look into using https://piwik.org/ or analytics storing
+
+also store commands
+
+and events in pgdb
+
+
+FEB 8 15:30 DOUBLE PRICES

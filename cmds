@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Post a new card
+curl -X POST -H "Content-Type: application/json" -d \
+  '{"id": "cmd000", "type": "new-card", "session-token": "0xdeadbeef", \
+	 "data":{"id" "card000", "question": "foo", "answer": "bar"}}' \
+https://fingertips-staging.replaceme.com/api/cards
+
+# Register
+curl -X POST -H "Content-Type: application/json" -d '{"id": "000", "type": "register", "data":{"email":"me@replaceme.com", "notifications":true}}' https://fingertips-staging.replaceme.com/api/cards
